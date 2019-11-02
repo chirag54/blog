@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block page_content %}
+{% load static %}
+
+<div class="col-md-4 offset-md-2">
+    <div style="margin-bottom: 100px; ">
+    <h2>Feedback</h2>
+     <h6>Your feedback matters. Write to us if you have any questions, queries or suggestions regarding any page/content published on thesports.com.</h6>
+    </div>
+    <form action="/blog/{{ post.pk }}" method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            {{ form.email }}
+        </div>
+        <div class="form-group">
+            <label for="msg">Message</label>
+            {{ form.message }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  
+</div>
+<div class="col-md-4 offset-md-2">
+    <div>
+        <h1>
+            Office Contact Details
+        </h1>
+        <h6>
+        Akuate Internet Services Pvt Ltd.</br>
+        No. 190-B, 2nd Floor,</br>
+        HN Plaza,100 Ft Ring road,</br>
+        6th Main, BSK 3rd Stage,</br>
+        Gujarat - 387375, INDIA</br>
+        Phone: <b>080-26790623</b>
+        </h6></br>
+    <div class="iframe-container">
+    <!-- embed code here -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14734.445731043237!2d72.8656332800187!3d22.593631762749762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e504a12078189%3A0x84f368567c7b3214!2sVadtal%2C%20Gujarat%20387375!5e0!3m2!1sen!2sin!4v1568538604596!5m2!1sen!2sin" width="500" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+    </div>
+</div>
+{% endblock %}
